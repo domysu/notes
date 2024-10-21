@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+    @session('message')
+    <div class="success_message">
+        {{ session('message') }}
+    </div>
+        
+    @endsession
     {{  $slot }}
 </body>
 </html>
