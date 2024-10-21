@@ -1,9 +1,9 @@
 <x-layout>
-<div class = "note-container">
     <a href="{{ route('note.create') }}" class="new-note-btn">
-        New Note
-
+        Create new note
     </a>
+<div class = "note-container">
+  
     <div class="notes">
         @foreach ($notes as $note)
             
