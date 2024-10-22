@@ -1,5 +1,5 @@
 <div>
-    <x-layout>
+    <x-app-layout>
         <div class="create-container">
             <form action="{{route('note.update', $notes)}}" method="POST">
                 @csrf
@@ -11,5 +11,5 @@
         </div>
     </form>     
         </div>
-    </x-layout>
+    </x-app-layout>
 </div>

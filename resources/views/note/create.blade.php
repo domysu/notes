@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="create-container">
         <form action="{{ route('note.store') }}" method="POST" class="create-container">
             @csrf
@@ -9,5 +9,5 @@
     </div>
         </form>
     </div>
-</x-layout>
+</x-app-layout>
 
