@@ -10,12 +10,24 @@ class NoteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $user = $request->user();
+
+        if($user->id == 3)
+        {
+            $note = Note::query()
+            ->orderBy("created_at","desc")
+            ->paginate();
+        
+
+        }
+        else{
         $note = Note::query()
         ->where("user_id", request()->user()->id)
         ->orderBy("created_at","desc")
         ->paginate();
+        }
        return view('note.index', ['notes'=> $note]);
     }
 
@@ -32,10 +44,16 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {   
+       
+       
        $data = $request->validate([
         'note'=> ['required','string']
         ]);
+      
+
+        
         $data['user_id']= $request->user()->id;
+      
 
         $note = Note::create($data);
         return to_route('note.show',$note)->with('message','Note was created');
@@ -44,10 +62,11 @@ class NoteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Note $note)
+    public function show(Note $note, Request $request)
     {
 
-        if($note->user_id !== request()->user()->id ){
+        $user = $request->user();
+        if($note->user_id !== request()->user()->id &&  $user->id !== 3){
             abort(403); 
         }
 
@@ -57,9 +76,10 @@ class NoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Note $note)
+    public function edit(Note $note, Request $request)
     {
-        if($note->user_id !== request()->user()->id ){
+        $user = $request->user();
+        if($note->user_id !== request()->user()->id &&  $user->id !== 3){
             abort(403); 
         }
         return view('note.edit', ['notes'=> $note]);
