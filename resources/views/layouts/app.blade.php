@@ -38,5 +38,14 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <footer>
+          <div>
+          </div>
+            <div class="footer-container">
+                Made by Dominykas
+            </div>
+        </footer>
     </body>
+  
 </html>

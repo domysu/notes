@@ -125,6 +125,24 @@ justify-content: center;
 }
 
 
+footer{
+    background-color: black;
+    font-family: sans-serif;
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    height: 100px;
+}
+.footer-container{
+    align-self: self-end;
+    padding: 10px;
+  
+
+}
+
+
 /*                  Buttons             */
 
 
@@ -213,11 +231,9 @@ background-color: grey;
 .note-create-button{
     border:none;
     margin-left:5px;
-    width: 70px;
-    height: 42.5px;
+    padding: 11px 12.5px 8.5px;
     background-color: rgba(64, 212, 5, 0.988);
     border-radius: 2px;
-    margin-bottom: 5px;
     cursor:pointer;
     transition: 0.1s ease-in-out;
     
