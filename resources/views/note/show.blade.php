@@ -2,8 +2,8 @@
     <div class = "note-header">
         <h1>Note: {{$notes->created_at}}</h1>
     </div>
-            <div class="note-container single-note">
-                <div class="note">
+            <div class="note-container">
+                <div class="note single-note">
                 <div class="note-body">
                     {{ $notes->note }}
                  

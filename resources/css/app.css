@@ -103,11 +103,13 @@ margin-top: 20px;
     display:flex;
     justify-content: center;
 }
-.note-container.single-note{
+.note.single-note{
 
     display:flex;
-    justify-content: center;
+    height: auto;
 
+
+   
 }
 
 .success_message{
